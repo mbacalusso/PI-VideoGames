@@ -81,68 +81,63 @@ export const Home = () => {
   }
 
   return (
-    <div>
+    <div className={s.body}>
+      <NavBar />
+
+      <Filter
+        handleChangeAlf={handleChangeAlf}
+        handleChangeRat={handleChangeRat}
+        handleChangeGen={handleChangeGen}
+        handleChangeOrigin={handleChangeOrigin}
+      />
+      <Pages
+        pagina={juegosPorPagina}
+        setPagina={games.length}
+        maxrender={paginado}
+      />
+
+      <br />
+
       <div>
-        <div className={s.body}>
-          <NavBar />
-
-          <Pages
-            pagina={juegosPorPagina}
-            setPagina={games.length}
-            maxrender={paginado}
-          />
-
-          <Filter
-            handleChangeAlf={handleChangeAlf}
-            handleChangeRat={handleChangeRat}
-            handleChangeGen={handleChangeGen}
-            handleChangeOrigin={handleChangeOrigin}
-          />
-
-          <br />
-
-          <div>
-            <button className={s.btn} onClick={(event) => handleOnClick(event)}>
-              Refresh
-            </button>
-          </div>
-
-          <br />
-
-          <div key="card" className={s.cardcontainer}>
-            {games &&
-              games
-                .slice(
-                  (pagina - 1) * juegosPorPagina,
-                  (pagina - 1) * juegosPorPagina + juegosPorPagina
-                )
-                .map((juego) => {
-                  return (
-                    <div key={juego.id}>
-                      <Cards
-                        key={juego.id}
-                        id={juego.id}
-                        name={juego.name}
-                        genres={juego.genres?.map((gan, index) => (
-                          <div key={index}>{gan.name}</div>
-                        ))}
-                        background_image={juego.background_image}
-                        rating={juego.rating}
-                      />
-                    </div>
-                  );
-                })}
-          </div>
-          <br />
-          <Pages
-            pagina={juegosPorPagina}
-            setPagina={games.length}
-            maxrender={paginado}
-          />
-          <br />
-          <Footer />
-        </div>
+        <button className={s.btn} onClick={(event) => handleOnClick(event)}>
+          Refresh
+        </button>
       </div>
+
+      <br />
+
+      <div key="card" className={s.cardcontainer}>
+        {games &&
+          games
+            .slice(
+              (pagina - 1) * juegosPorPagina,
+              (pagina - 1) * juegosPorPagina + juegosPorPagina
+            )
+            .map((juego) => {
+              return (
+                <div key={juego.id}>
+                  <Cards
+                    key={juego.id}
+                    id={juego.id}
+                    name={juego.name}
+                    genres={juego.genres?.map((gan, index) => (
+                      <div key={index}>{gan.name}</div>
+                    ))}
+                    background_image={juego.background_image}
+                    rating={juego.rating}
+                  />
+                </div>
+              );
+            })}
+      </div>
+      <br />
+      <Pages
+        pagina={juegosPorPagina}
+        setPagina={games.length}
+        maxrender={paginado}
+      />
+      <br />
+      <Footer />
     </div>
   );
 };

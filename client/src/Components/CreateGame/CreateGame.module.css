@@ -3,6 +3,8 @@
   height: 65rem;
   background: linear-gradient(#232730, #3b4252);
   text-align: center;
+  display: flex;
+  justify-content: center;
 }
 
 .btn {
@@ -12,7 +14,8 @@
   padding: 0.6rem;
   margin: 1rem;
   font-family: "Flexo-Demi", arial, sans-serif;
-  position: center;
+  position: relative;
+  right: 10rem;
   z-index: 1;
   border: none;
   cursor: pointer;
@@ -79,29 +82,26 @@
   border-radius: 0.4rem;
   width: 15rem;
   height: 1.8rem;
-  justify-content: center;
+  text-align: center;
   display: flex;
+  justify-content: center;
 }
 
 .indicar {
   color: #eceff4ff;
   font-family: "Flexo-Demi", arial, sans-serif;
   font-weight: 1rem;
-  justify-content: center;
-  position: static;
   display: flex;
+  justify-content: center;
 }
 
 .err {
   color: #eceff4ff;
   font-family: "Flexo-Demi", arial, sans-serif;
   font-weight: 1rem;
-  justify-content: center;
-  display: flex;
-  position: relative;
   left: 16rem;
   bottom: 1.7rem;
-  margin: 0;
+  margin: 1rem;
   padding: 0;
 }
 

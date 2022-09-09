@@ -1,4 +1,4 @@
-    import { Link, useHistory } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { useState, useEffect } from "react";
 import {
   createGame,
@@ -235,6 +235,7 @@ export const CreateGame = () => {
 
           <label className={s.indicar}>Genres </label>
           <select
+            className={s.select}
             name="genres"
             onChange={(event) => handlerSelectGenres(event)}
           >
@@ -262,6 +263,7 @@ export const CreateGame = () => {
           <div>
             <label className={s.indicar}>Platforms </label>
             <select
+              className={s.select}
               name="platforms"
               onChange={(event) => handlerSelectPlatforms(event)}
             >

@@ -1,18 +1,20 @@
 body {
   margin: 0;
   padding: 0;
+  background: linear-gradient(#232730, #434c5e);
+  text-align: center;
 }
 
 .body {
   overflow: hidden;
   background: linear-gradient(#232730, #434c5e);
+  text-align: center;
 }
 
 .cardcontainer {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  align-items: flex-end;
   margin: 0.5rem;
 }
 
