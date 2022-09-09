@@ -1,0 +1,39 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.body {
+  overflow: hidden;
+  background: linear-gradient(#232730, #434c5e);
+}
+
+.cardcontainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: flex-end;
+  margin: 0.5rem;
+}
+
+.btn {
+  width: auto;
+  height: auto;
+  border-radius: 0.4rem;
+  padding: 0.6rem;
+  margin: 1rem;
+  font-family: "Flexo-Demi", arial, sans-serif;
+  position: center;
+  z-index: 1;
+  border: none;
+  cursor: pointer;
+  color: #eceff4ff;
+  background: linear-gradient(to bottom, #434c5eff, #4c566aff);
+  box-shadow: 0 0.25rem 0.5rem 0 #232730ff;
+  outline: none;
+}
+
+.btn:hover {
+  color: #eceff4ff;
+  box-shadow: 0 0.15rem 0.15rem 0 #929aaaff;
+}

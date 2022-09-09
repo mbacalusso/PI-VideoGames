@@ -1,0 +1,26 @@
+select {
+  width: 10rem;
+  border-radius: 0.5rem;
+  margin: 0.5rem;
+  padding: 0.2rem;
+  cursor: pointer;
+  /* display: flex; */
+  /* justify-content: flex-start; */
+  /* flex-direction:column; */
+}
+
+.container {
+  /* text-align: center; */
+  /* flex-direction: column; */
+  /* justify-content: flex-start; */
+}
+
+.tag {
+  color: #eceff4ff;
+  font-family: "Flexo-Demi", arial, sans-serif;
+  font-weight: 1rem;
+  display: flex;
+  /* justify-content: flex-start; */
+  flex-direction: column;
+  justify-content: flex-start;
+}

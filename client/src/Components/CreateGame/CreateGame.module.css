@@ -1,0 +1,111 @@
+.body {
+  width: 150rem;
+  height: 65rem;
+  background: linear-gradient(#232730, #3b4252);
+  text-align: center;
+}
+
+.btn {
+  width: auto;
+  height: auto;
+  border-radius: 0.4rem;
+  padding: 0.6rem;
+  margin: 1rem;
+  font-family: "Flexo-Demi", arial, sans-serif;
+  position: center;
+  z-index: 1;
+  border: none;
+  cursor: pointer;
+  color: #eceff4ff;
+  background: linear-gradient(to bottom, #434c5eff, #4c566aff);
+  box-shadow: 0 0.25rem 0.5rem 0 #232730ff;
+  outline: none;
+}
+
+.btn:hover {
+  color: #eceff4ff;
+  box-shadow: 0 0.15rem 0.15rem 0 #929aaaff;
+}
+
+.btn2 {
+  border: none;
+  z-index: 1;
+  width: 8rem;
+  height: 2.5rem;
+  border-radius: 0.4rem;
+  position: relative;
+  padding: 0.4rem 1.5rem;
+  font-family: "Flexo-Demi", arial, sans-serif;
+  font-weight: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-block;
+  color: #eceff4ff;
+  background: linear-gradient(to bottom, #434c5eff, #4c566aff);
+  box-shadow: 0 0.25rem 0.5rem 0 #232730ff;
+  outline: none;
+}
+.btn2:after {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 100%;
+  top: 0;
+  right: 0;
+  z-index: -1;
+  background: linear-gradient(to bottom, #d8dee9ff, #eceff4ff);
+  border-radius: 0.4rem;
+  box-shadow: 0 0.25rem 0.5rem 0 #929aaaff;
+  transition: all 0.3s ease;
+}
+.btn2:hover {
+  color: #232730ff;
+}
+.btn2:hover:after {
+  left: 0;
+  width: 100%;
+}
+.btn2:active {
+  top: 0.125rem;
+}
+
+.crear {
+  background-color: #eceff4ff;
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  padding: auto;
+  margin: 0rem;
+  border: auto;
+  border-radius: 0.4rem;
+  width: 15rem;
+  height: 1.8rem;
+  justify-content: center;
+  display: flex;
+}
+
+.indicar {
+  color: #eceff4ff;
+  font-family: "Flexo-Demi", arial, sans-serif;
+  font-weight: 1rem;
+  justify-content: center;
+  position: static;
+  display: flex;
+}
+
+.err {
+  color: #eceff4ff;
+  font-family: "Flexo-Demi", arial, sans-serif;
+  font-weight: 1rem;
+  justify-content: center;
+  display: flex;
+  position: relative;
+  left: 16rem;
+  bottom: 1.7rem;
+  margin: 0;
+  padding: 0;
+}
+
+.centrar {
+  justify-content: center;
+  display: flex;
+}

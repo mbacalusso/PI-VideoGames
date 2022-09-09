@@ -1,0 +1,181 @@
+.detail {
+  width: 70rem;
+  height: 70rem;
+  border-radius: 0.5rem;
+  margin: 0.5rem auto;
+  position: relative;
+  top: 3rem;
+  padding: 0.1rem;
+  box-shadow: 0 0.25rem 0.5rem 0 #2a2f3aff;
+  background: #2a2f3aff;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.detail .cov {
+  width: 90%;
+  height: 50%;
+  margin: 0.3rem auto;
+  padding: 0.5rem;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.detail .desc {
+  border-radius: 0.4rem;
+  margin: 0.3rem;
+  padding: 0.5rem;
+  background: rgb(51, 57, 71);
+}
+
+.detail .desc h2 {
+  border-radius: 0.5rem;
+  margin: 0.5rem;
+  padding: 0.5rem;
+  font-size: 1.5rem;
+  font-family: "Flexo-Demi", arial, sans-serif;
+  color: #eceff4ff;
+  background: linear-gradient(to bottom, #232730ff, #2a2f3aff);
+}
+
+.tagnombre {
+  border-radius: 0.5rem;
+  margin: 0.5rem;
+  padding: 0.2rem;
+  font-size: 1rem;
+  font-family: "Flexo-Demi", arial, sans-serif;
+  color: #eceff4ff;
+  background: linear-gradient(to bottom, #232730ff, #2e3440ff);
+}
+
+.tag1 {
+  position: relative;
+  right: 20rem;
+  top: 7rem;
+  border-radius: 0.5rem;
+  margin: 0.5rem;
+  padding: 0.2rem;
+  font-size: 1rem;
+  font-family: "Flexo-Demi", arial, sans-serif;
+  color: #eceff4ff;
+  background: linear-gradient(to bottom, #232730ff, #2e3440ff);
+}
+
+.tag2 {
+  position: relative;
+  left: 0rem;
+  bottom: 4.8rem;
+  border-radius: 0.5rem;
+  margin: 0.5rem;
+  padding: 0.2rem;
+  font-size: 1rem;
+  font-family: "Flexo-Demi", arial, sans-serif;
+  color: #eceff4ff;
+  background: linear-gradient(to bottom, #232730ff, #2e3440ff);
+}
+
+.tag3 {
+  position: relative;
+  right: 0rem;
+  bottom: 2.8rem;
+  border-radius: 0.5rem;
+  margin: 0.5rem;
+  padding: 0.2rem;
+  font-size: 1rem;
+  font-family: "Flexo-Demi", arial, sans-serif;
+  color: #eceff4ff;
+  background: linear-gradient(to bottom, #232730ff, #2e3440ff);
+}
+
+.tag4 {
+  position: relative;
+  left: 20rem;
+  bottom: 7.6rem;
+  border-radius: 0.5rem;
+  margin: 0.5rem;
+  padding: 0.2rem;
+  font-size: 1rem;
+  font-family: "Flexo-Demi", arial, sans-serif;
+  color: #eceff4ff;
+  background: linear-gradient(to bottom, #232730ff, #2e3440ff);
+}
+.tag5 {
+  position: relative;
+  right: 0rem;
+  bottom: 5rem;
+  border-radius: 0.5rem;
+  margin: 0.5rem;
+  padding: 0.2rem;
+  font-size: 1rem;
+  font-family: "Flexo-Demi", arial, sans-serif;
+  color: #eceff4ff;
+  background: linear-gradient(to bottom, #232730ff, #2e3440ff);
+}
+
+.tag10 {
+  color: #eceff4ff;
+  position: relative;
+  right: 20rem;
+  top: 7rem;
+  font-family: "Flexo-Demi", arial, sans-serif;
+  font-weight: 1rem;
+}
+.tag11 {
+  color: #eceff4ff;
+  position: relative;
+  bottom: 5rem;
+  right: 0rem;
+  font-family: "Flexo-Demi", arial, sans-serif;
+  font-weight: 1rem;
+}
+.tag12 {
+  color: #eceff4ff;
+  position: relative;
+  bottom: 2.8rem;
+  left: 0rem;
+  font-family: "Flexo-Demi", arial, sans-serif;
+  font-weight: 1rem;
+}
+.tag13 {
+  color: #eceff4ff;
+  position: relative;
+  left: 20rem;
+  bottom: 7.6rem;
+  font-family: "Flexo-Demi", arial, sans-serif;
+  font-weight: 1rem;
+}
+.tag14 {
+  color: #eceff4ff;
+  width: 100%;
+  position: relative;
+  right: 0rem;
+  bottom: 5rem;
+  font-family: "Flexo-Demi", arial, sans-serif;
+  font-weight: 1rem;
+}
+
+.btn {
+  width: auto;
+  height: auto;
+  border-radius: 0.4rem;
+  padding: 0.6rem;
+  margin: 1rem;
+  font-family: "Flexo-Demi", arial, sans-serif;
+  position: center;
+  z-index: 1;
+  border: none;
+  cursor: pointer;
+  color: #eceff4ff;
+  background: linear-gradient(to bottom, #434c5eff, #4c566aff);
+  box-shadow: 0 0.25rem 0.5rem 0 #232730ff;
+  outline: none;
+}
+
+.btn:hover {
+  color: #eceff4ff;
+  box-shadow: 0 0.15rem 0.15rem 0 #929aaaff;
+}

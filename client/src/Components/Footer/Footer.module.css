@@ -1,0 +1,23 @@
+.footer {
+  background-color: #232730ff;
+}
+
+.linkedin {
+  margin: 0.5rem;
+  padding: 0.5rem;
+  height: 6rem;
+  width: 6rem;
+  position: relative;
+  left: 45rem;
+  cursor: pointer;
+}
+
+.github {
+  margin: 0.5rem;
+  padding: 0.5rem;
+  height: 6rem;
+  width: 6rem;
+  position: relative;
+  left: 45rem;
+  cursor: pointer;
+}
