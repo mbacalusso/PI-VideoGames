@@ -88,7 +88,7 @@ export default function rootReducer(state = initialState, action) {
       };
 
     case SET_FILTER_GAMES_GENRES:
-      const genre = action.payload; //genre debería llegar como un objeto con id y name
+      const genre = action.payload;
       if (genre === "All")
         return {
           ...state,

@@ -2,15 +2,14 @@ import github from "../Styles/img/github.png";
 import linkedin from "../Styles/img/linkedin.png";
 import s from "./Footer.module.css";
 
-const handleClickGit = () => {
-  window.open("https://github.com/mbacalusso");
-};
-
-const handleClickLinkedin = () => {
-  window.open("https://www.linkedin.com/in/martinbacalusso/");
-};
-
 export const Footer = () => {
+  const handleClickGit = () => {
+    window.open("https://github.com/mbacalusso");
+  };
+
+  const handleClickLinkedin = () => {
+    window.open("https://www.linkedin.com/in/martinbacalusso/");
+  };
   return (
     <footer className={s.footer}>
       <img

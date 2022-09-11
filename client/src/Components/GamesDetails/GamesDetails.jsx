@@ -62,7 +62,7 @@ export const GamesDetails = () => {
             <span className={s.tag2}>Platforms: </span>
           </h3>
           <span className={s.tag11}>
-            {game.id?.length > 7
+            {game.id.length > 7
               ? game.platforms?.map((plat) => plat).join(" - ")
               : game.platforms?.map((plat) => plat.platform.name).join(" - ")}
           </span>

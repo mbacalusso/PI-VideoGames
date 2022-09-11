@@ -31,20 +31,6 @@ export const getGamesByName = (name) => {
   };
 };
 
-export const getGamesGenres = () => {
-  return async (dispatch) => {
-    try {
-      const games = await axios.get("http://localhost:3001/api/genre");
-      return dispatch({
-        type: GET_GENRES,
-        payload: games.data,
-      });
-    } catch (error) {
-      console.log(error);
-    }
-  };
-};
-
 export const getGamesDetails = (id) => {
   return async (dispatch) => {
     try {
@@ -61,24 +47,38 @@ export const getGamesDetails = (id) => {
   };
 };
 
+export const getPlatforms = () => {
+  return async (dispatch) => {
+    try {
+      const resp = await axios.get("http://localhost:3001/api/platforms");
+      return dispatch({
+        type: GET_PLATFORMS,
+        payload: resp.data,
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+};
+
+export const getGamesGenres = () => {
+  return async (dispatch) => {
+    try {
+      const games = await axios.get("http://localhost:3001/api/genre");
+      return dispatch({
+        type: GET_GENRES,
+        payload: games.data,
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+};
+
 export const setGamesOrder = (order) => {
   return {
     type: SET_FILTER_GAMES_ORDER,
     payload: order,
-  };
-};
-
-export const setGamesOrigin = (origin) => {
-  return {
-    type: SET_FILTER_GAMES_ORIGIN,
-    payload: origin,
-  };
-};
-
-export const setGamesGenres = (genre) => {
-  return {
-    type: SET_FILTER_GAMES_GENRES,
-    payload: genre,
   };
 };
 
@@ -89,30 +89,30 @@ export const setGamesRating = (rating) => {
   };
 };
 
+export const setGamesGenres = (genre) => {
+  return {
+    type: SET_FILTER_GAMES_GENRES,
+    payload: genre,
+  };
+};
+
+export const setGamesOrigin = (origin) => {
+  return {
+    type: SET_FILTER_GAMES_ORIGIN,
+    payload: origin,
+  };
+};
+
 export const createGame = (data) => {
   return async (dispatch) => {
     try {
-      let newGame = await axios.post(
+      const newGame = await axios.post(
         "http://localhost:3001/api/videogame",
         data
       );
       return dispatch({
         type: CREATE_GAME,
         payload: newGame.data,
-      });
-    } catch (error) {
-      console.log(error);
-    }
-  };
-};
-
-export const getPlatforms = () => {
-  return async (dispatch) => {
-    try {
-      let resp = await axios.get("http://localhost:3001/api/platforms");
-      return dispatch({
-        type: GET_PLATFORMS,
-        payload: resp.data,
       });
     } catch (error) {
       console.log(error);

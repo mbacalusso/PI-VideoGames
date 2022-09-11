@@ -7,7 +7,7 @@ export const NavBar = () => {
   return (
     <header>
       <Link to="/">
-        <img className={s.imagen} src={logo} alt="blue planet" />
+        <img className={s.imagen} src={logo} alt="img" />
       </Link>
 
       <SearchBar />

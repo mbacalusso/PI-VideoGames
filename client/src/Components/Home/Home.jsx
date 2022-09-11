@@ -31,13 +31,12 @@ export const Home = () => {
 
   const [pagina, setPagina] = useState(1);
   const [juegosPorPagina] = useState(15);
-  const lastGame = pagina * juegosPorPagina; // 15
-  const firstGame = lastGame - juegosPorPagina; // 0
-  const currentGames = games.slice(firstGame, lastGame);
-
   const paginado = (pageNumber) => {
     setPagina(pageNumber);
   };
+  /* const lastGame = pagina * juegosPorPagina; // 15 */
+  /* const firstGame = lastGame - juegosPorPagina; // 0 */
+  /* const currentGames = games.slice(firstGame, lastGame); */
 
   const handleChangeAlf = (event) => {
     dispatch(setGamesOrder(event.target.value));

@@ -10,7 +10,7 @@ import { useDispatch, useSelector } from "react-redux";
 import s from "./CreateGame.module.css";
 
 function validateInput(input) {
-  var errors = {};
+  let errors = {};
 
   if (!input.name) {
     errors.name = "Name is required";

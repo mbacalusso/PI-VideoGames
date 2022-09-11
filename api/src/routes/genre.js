@@ -9,7 +9,8 @@ router.get("/", async (req, res, next) => {
     const genre = await axios.get(
       `https://api.rawg.io/api/genres?key=${YOUR_API_KEY}`
     );
-    const countGenre = await Genre.count();
+    
+    const countGenre = await Genre.count(); // count() returns a single number type value that represents the number of rows matching your COUNT condition.
 
     if (countGenre === 0) {
       const apiGenres = genre.data.results
@@ -17,7 +18,7 @@ router.get("/", async (req, res, next) => {
         .map((genres) => {
           return { name: genres };
         });
-      await Genre.bulkCreate(apiGenres);
+      await Genre.bulkCreate(apiGenres); // bulkCreate() method allows you to insert multiple records to your database table with a single function call.
     }
 
     const getGenres = await Genre.findAll();
