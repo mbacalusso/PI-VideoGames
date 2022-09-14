@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import s from "./Cards.module.css";
 
 export const Cards = ({ id, name, genres, background_image, rating }) => {
@@ -19,9 +19,9 @@ export const Cards = ({ id, name, genres, background_image, rating }) => {
           Rating: {rating}
         </h6>
 
-        <NavLink to={`/home/detail/${id}`}>
+        <Link to={`/home/detail/${id}`}>
           <button className={s.btn}>Details</button>
-        </NavLink>
+        </Link>
       </div>
     </div>
   );

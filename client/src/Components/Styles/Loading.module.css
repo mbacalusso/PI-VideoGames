@@ -5,6 +5,8 @@
   border-radius: 5px;
   display: block;
   margin: auto;
+  position: relative;
+  top: 10rem;
 }
 
 .loading {
@@ -19,7 +21,8 @@
   padding: 0.6rem;
   margin: 1rem;
   font-family: "Flexo-Demi", arial, sans-serif;
-  position: center;
+  position: relative;
+  top: 10rem;
   z-index: 1;
   border: none;
   cursor: pointer;

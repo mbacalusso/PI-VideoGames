@@ -24,3 +24,26 @@ select {
   flex-direction: column;
   justify-content: flex-start;
 }
+
+.btn {
+  width: 5rem;
+  height: 2rem;
+  border-radius: 0.4rem;
+  padding: 0.6rem;
+  margin: 1rem;
+  font-family: "Flexo-Demi", arial, sans-serif;
+  position: relative;
+  top: 1.7rem;
+  z-index: 1;
+  border: none;
+  cursor: pointer;
+  color: #eceff4ff;
+  background: linear-gradient(to bottom, #434c5eff, #4c566aff);
+  box-shadow: 0 0.25rem 0.5rem 0 #232730ff;
+  outline: none;
+}
+
+.btn:hover {
+  color: #eceff4ff;
+  box-shadow: 0 0.15rem 0.15rem 0 #929aaaff;
+}

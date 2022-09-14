@@ -16,6 +16,7 @@ import {
 import s from "./Home.module.css";
 import e from "../Styles/Loading.module.css";
 import loading from "../Styles/img/loading.gif";
+import { Link } from "react-router-dom";
 
 export const Home = () => {
   const dispatch = useDispatch();
@@ -34,9 +35,8 @@ export const Home = () => {
   const paginado = (pageNumber) => {
     setPagina(pageNumber);
   };
-  /* const lastGame = pagina * juegosPorPagina; // 15 */
-  /* const firstGame = lastGame - juegosPorPagina; // 0 */
-  /* const currentGames = games.slice(firstGame, lastGame); */
+
+  /* const maxrender = videogames.length / juegosPorPagina; */
 
   const handleChangeAlf = (event) => {
     dispatch(setGamesOrder(event.target.value));
@@ -62,9 +62,10 @@ export const Home = () => {
     setOrder(event.target.value);
   };
 
-  const handleOnClick = (event) => {
+  const hanleClick = (event) => {
     event.preventDefault();
     dispatch(getAllGames());
+    setPagina(1);
   };
 
   if (!games.length) {
@@ -72,9 +73,11 @@ export const Home = () => {
       <div className={e.loading}>
         <img className={e.img} src={loading} alt="loading" />
 
-        <button className={e.btn} onClick={(event) => handleOnClick(event)}>
-          Back home
-        </button>
+        <Link to="/home">
+          <button onClick={(event) => hanleClick(event)} className={e.btn}>
+            Back
+          </button>
+        </Link>
       </div>
     );
   }
@@ -89,21 +92,17 @@ export const Home = () => {
         handleChangeGen={handleChangeGen}
         handleChangeOrigin={handleChangeOrigin}
       />
+
+      <button className={s.page} disabled>
+        Page {pagina}
+      </button>
+
       <Pages
         pagina={juegosPorPagina}
         setPagina={games.length}
         maxrender={paginado}
       />
-
-      <br />
-
-      <div>
-        <button className={s.btn} onClick={(event) => handleOnClick(event)}>
-          Refresh
-        </button>
-      </div>
-
-      <br />
+      {/* <Pages pagina={pagina} setPagina={setPagina} maxrender={maxrender} /> */}
 
       <div key="card" className={s.cardcontainer}>
         {games &&
@@ -129,13 +128,21 @@ export const Home = () => {
               );
             })}
       </div>
+
       <br />
+
+      <button className={s.page} disabled>
+        Page {pagina}
+      </button>
+
       <Pages
         pagina={juegosPorPagina}
         setPagina={games.length}
         maxrender={paginado}
       />
+
       <br />
+
       <Footer />
     </div>
   );

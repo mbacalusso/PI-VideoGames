@@ -13,6 +13,13 @@
   height: 100vh;
 }
 
+.parr {
+  font-family: "Flexo-Demi", arial, sans-serif;
+  font-weight: 1rem;
+  color: #eceff4ff;
+  font-size: 1.5rem;
+
+}
 .btn {
   border: none;
   background: linear-gradient(#232730, #434c5e);
@@ -48,7 +55,8 @@
   transition: all 0.3s ease;
 }
 .btn:hover {
-  color: #232730ff;
+  color: #eceff4ff;
+  box-shadow: 0 0.15rem 0.15rem 0 #929aaaff;
 }
 .btn:hover:after {
   left: 0;

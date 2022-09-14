@@ -8,6 +8,8 @@ import {
 } from "./../../redux/actions";
 import { useDispatch, useSelector } from "react-redux";
 import s from "./CreateGame.module.css";
+import e from "../Styles/Loading.module.css";
+import loading from "../Styles/img/loading.gif";
 
 function validateInput(input) {
   let errors = {};
@@ -16,29 +18,26 @@ function validateInput(input) {
     errors.name = "Name is required";
   } else if (/[@=$%&|<>#]/.test(input.name)) {
     errors.name = "Name not accept simbols";
-  } else if (input.name.length > 20) {
+  } else if (input.name.length >= 20) {
     errors.name = "Name is too long (Max = 20 characters)";
   }
   if (!input.description) {
     errors.description = "Description is required";
   } else if (/[@=$%&|<>#]/.test(input.description)) {
     errors.description = "Description not accept simbols";
-  } else if (input.description.length > 1500) {
+  } else if (input.description.length >= 1500) {
     errors.description = "Description is too long. (Max = 1500 characters)";
   }
   if (!input.rating) {
     errors.rating = "Rating is required";
-  } else if (input.rating > 5 || input.rating < 0) {
+  } else if (input.rating > 5 || input.rating < 0 || input.rating === "-0") {
     errors.rating = "Rating must range between 0 to 5";
   }
   if (!input.released) {
     errors.released = "Date of release is required";
-  } else if (input.released.length < 10) {
-    errors.released = "Date of release is to long";
   }
   if (!input.genres[0]) {
     errors.genres = "Minimun one Genre is required ";
-  } else if (input.genres) {
   }
   if (!input.platforms[0]) {
     errors.platforms = "Minimun one Platform is required";
@@ -49,9 +48,12 @@ function validateInput(input) {
 
 export const CreateGame = () => {
   const dispatch = useDispatch();
+
   const generos = useSelector((state) => state.gamesGenres);
   const platforms = useSelector((state) => state.platforms);
+
   const history = useHistory();
+
   const [errors, setErrors] = useState({});
 
   const [dataForm, setDataForm] = useState({
@@ -76,20 +78,6 @@ export const CreateGame = () => {
     setDataForm({
       ...dataForm,
       [event.target.name]: event.target.value,
-    });
-
-    setErrors(
-      validateInput({
-        ...dataForm,
-        [event.target.name]: event.target.value,
-      })
-    );
-  }
-
-  function handleSelect(event) {
-    setDataForm({
-      ...dataForm,
-      [event.target.name]: [...dataForm[event.target.name], event.target.value],
     });
 
     setErrors(
@@ -170,13 +158,26 @@ export const CreateGame = () => {
     history.push("/home");
   }
 
+  if (!generos.length || !platforms.length) {
+    return (
+      <div className={e.loading}>
+        <img className={e.img} src={loading} alt="loading" />
+
+        <Link to="/home">
+          <button className={e.btn}>Back home</button>
+        </Link>
+      </div>
+    );
+  }
+
   return (
     <div className={s.centrar}>
       <div className={s.body}>
-        <Link to="/home">
-          <button className={s.btn}>Home </button>
-        </Link>
-
+        <div>
+          <Link to="/home">
+            <button className={s.btn}>Home </button>
+          </Link>
+        </div>
         <form autoComplete="off" onSubmit={(event) => handleSubmit(event)}>
           <label className={s.indicar}>Name </label>
           <input

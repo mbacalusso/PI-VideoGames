@@ -3,6 +3,9 @@ body {
   padding: 0;
   background: linear-gradient(#232730, #434c5e);
   text-align: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
 }
 
 .body {
@@ -38,4 +41,19 @@ body {
 .btn:hover {
   color: #eceff4ff;
   box-shadow: 0 0.15rem 0.15rem 0 #929aaaff;
+}
+
+.page {
+  width: auto;
+  height: auto;
+  border-radius: 0.4rem;
+  padding: 0.6rem;
+  margin: 1rem;
+  font-family: "Flexo-Demi", arial, sans-serif;
+  position: center;
+  border: none;
+  color: #eceff4ff;
+  background: linear-gradient(to bottom, #434c5eff, #4c566aff);
+  box-shadow: 0 0.15rem 0.15rem 0 #929aaaff;
+  outline: none;
 }

@@ -22,19 +22,13 @@ export const GamesDetails = () => {
     return (
       <div className={e.loading}>
         <img className={e.img} src={loading} alt="loading" />
+
+        <Link to="/home">
+          <button className={e.btn}>Back</button>
+        </Link>
       </div>
     );
   }
-
-  /* if (game.length === 0) {
-    console.log("hola")
-  } else if (game.length > 2 || game.length < 1) {
-    return (
-      <div className={loading}>
-        <img className={s.img2} src={loading} alt="loading" />
-      </div>
-    );
-  } */
 
   return (
     <div>
