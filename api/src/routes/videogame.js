@@ -1,8 +1,6 @@
 const { Router } = require("express");
 const { Videogame, Genre, YOUR_API_KEY } = require("../db");
-const {
-  /* apiGames, dbGames, */ allGames /* gamesByName */,
-} = require("./utils");
+const { allGames } = require("./utils");
 const axios = require("axios");
 const router = Router();
 

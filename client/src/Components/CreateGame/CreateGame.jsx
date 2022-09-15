@@ -11,19 +11,19 @@ import s from "./CreateGame.module.css";
 import e from "../Styles/Loading.module.css";
 import loading from "../Styles/img/loading.gif";
 
-function validateInput(input) {
+const validateInput = (input) => {
   let errors = {};
 
   if (!input.name) {
     errors.name = "Name is required";
-  } else if (/[@=$%&|<>#]/.test(input.name)) {
+  } else if (/[@=$%&|<># ]/.test(input.name)) {
     errors.name = "Name not accept simbols";
   } else if (input.name.length >= 20) {
     errors.name = "Name is too long (Max = 20 characters)";
   }
   if (!input.description) {
     errors.description = "Description is required";
-  } else if (/[@=$%&|<>#]/.test(input.description)) {
+  } else if (/[@=$%&|<># ]/.test(input.description)) {
     errors.description = "Description not accept simbols";
   } else if (input.description.length >= 1500) {
     errors.description = "Description is too long. (Max = 1500 characters)";
@@ -44,7 +44,7 @@ function validateInput(input) {
   }
 
   return errors;
-}
+};
 
 export const CreateGame = () => {
   const dispatch = useDispatch();
@@ -74,7 +74,9 @@ export const CreateGame = () => {
     dispatch(getPlatforms());
   }, [dispatch]);
 
-  function handleChange(event) {
+  const handleChange = (event) => {
+    event.preventDefault();
+
     setDataForm({
       ...dataForm,
       [event.target.name]: event.target.value,
@@ -86,9 +88,11 @@ export const CreateGame = () => {
         [event.target.name]: event.target.value,
       })
     );
-  }
+  };
 
-  function handlerSelectPlatforms(event) {
+  const handlerSelectPlatforms = (event) => {
+    event.preventDefault();
+
     setDataForm({
       ...dataForm,
       platforms: dataForm.platforms.includes(event.target.value)
@@ -102,9 +106,11 @@ export const CreateGame = () => {
         [event.target.name]: event.target.value,
       })
     );
-  }
+  };
 
-  function handlerSelectGenres(event) {
+  const handlerSelectGenres = (event) => {
+    event.preventDefault();
+
     setDataForm({
       ...dataForm,
       genres: dataForm.genres.includes(event.target.value)
@@ -118,9 +124,9 @@ export const CreateGame = () => {
         [event.target.name]: event.target.value,
       })
     );
-  }
+  };
 
-  function handleDelete(event) {
+  const handleDelete = (event) => {
     event.preventDefault();
 
     setDataForm({
@@ -131,9 +137,9 @@ export const CreateGame = () => {
         (plataformas) => plataformas !== event.target.value
       ),
     });
-  }
+  };
 
-  function handleSubmit(event) {
+  const handleSubmit = (event) => {
     event.preventDefault();
 
     if (!dataForm.background_image) {
@@ -156,7 +162,7 @@ export const CreateGame = () => {
     });
 
     history.push("/home");
-  }
+  };
 
   if (!generos.length || !platforms.length) {
     return (
@@ -223,7 +229,7 @@ export const CreateGame = () => {
           <div>
             <label className={s.indicar}>Released </label>
             <input
-              onChange={handleChange}
+              onChange={(event) => handleChange(event)}
               type="date"
               id="released"
               name="released"
@@ -253,7 +259,7 @@ export const CreateGame = () => {
           <br />
           {dataForm.genres.map((gen, index) => (
             <div key={index}>
-              <button value={gen} onClick={handleDelete}>
+              <button value={gen} onClick={(event) => handleDelete(event)}>
                 {gen}
               </button>
             </div>
@@ -280,7 +286,7 @@ export const CreateGame = () => {
           <br />
           {dataForm.platforms.map((plat, index) => (
             <div key={index}>
-              <button value={plat} onClick={handleDelete}>
+              <button value={plat} onClick={(event) => handleDelete(event)}>
                 {plat}
               </button>
             </div>
@@ -297,9 +303,6 @@ export const CreateGame = () => {
             value={dataForm.background_image}
             placeholder="Enter image"
           />
-          {errors.background_image && (
-            <ul className={s.err}> {errors.background_image} </ul>
-          )}
 
           <br />
 

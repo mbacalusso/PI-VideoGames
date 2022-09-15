@@ -67,36 +67,6 @@ const dbGames = async () => {
   }
 };
 
-/* const gamesByName = async (req) => {
-  try {
-    const { search } = req.query;
-    const condicionDb = {
-      where: { name: { [Op.iLike]: `%${search}%` } },
-      include: Genre,
-    };
-    const apiUrl = await axios.get(
-      `https://api.rawg.io/api/games?search=${search}&key=${YOUR_API_KEY}`
-    );
-    let searchGame = apiUrl.data.results?.map((videogame) => {
-      return {
-        id: videogame.id,
-        name: videogame.name,
-        released: videogame.released,
-        rating: videogame.rating,
-        platforms: videogame.platforms.map((plat) => plat.platform.name),
-        background_image: videogame.background_image,
-        genres: videogame.genres?.map((gen) => gen.name),
-        inDB: false,
-      };
-    });
-    let searchDb = await Videogame.findAll(condicionDb);
-    let listaCompleta = searchDb.concat(searchGame);
-    return listaCompleta;
-  } catch (e) {
-    console.log(e);
-  }
-}; */
-
 const allGames = async () => {
   try {
     const gamesAPI = await apiGames();
@@ -112,5 +82,4 @@ module.exports = {
   apiGames,
   dbGames,
   allGames,
-  /* gamesByName, */
 };

@@ -10,6 +10,7 @@ export const Footer = () => {
   const handleClickLinkedin = () => {
     window.open("https://www.linkedin.com/in/martinbacalusso/");
   };
+
   return (
     <footer className={s.footer}>
       <img

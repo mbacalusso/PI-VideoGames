@@ -15,6 +15,7 @@ export const Filter = ({
 
   const handleOnClick = (event) => {
     event.preventDefault();
+
     dispatch(getAllGames());
   };
 
@@ -58,9 +59,9 @@ export const Filter = ({
         >
           <option value="All">Genders</option>
           {gamesGenres &&
-            gamesGenres.map((t, i) => (
-              <option key={i} value={t.name}>
-                {t.name}
+            gamesGenres.map((genre, index) => (
+              <option key={index} value={genre.name}>
+                {genre.name}
               </option>
             ))}
         </select>

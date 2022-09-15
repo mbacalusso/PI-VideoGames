@@ -28,7 +28,7 @@ export const Home = () => {
     dispatch(getAllGames());
   }, [dispatch]);
 
-  const [order, setOrder] = useState("");
+  const [, setOrder] = useState("");
 
   const [pagina, setPagina] = useState(1);
   const [juegosPorPagina] = useState(15);
@@ -36,7 +36,10 @@ export const Home = () => {
     setPagina(pageNumber);
   };
 
-  /* const maxrender = videogames.length / juegosPorPagina; */
+  let currentPage = games.slice(
+    (pagina - 1) * juegosPorPagina,
+    (pagina - 1) * juegosPorPagina + juegosPorPagina
+  );
 
   const handleChangeAlf = (event) => {
     dispatch(setGamesOrder(event.target.value));
@@ -98,35 +101,28 @@ export const Home = () => {
       </button>
 
       <Pages
-        pagina={juegosPorPagina}
-        setPagina={games.length}
-        maxrender={paginado}
+        perPage={juegosPorPagina}
+        allGames={games.length}
+        setPagina={paginado}
       />
-      {/* <Pages pagina={pagina} setPagina={setPagina} maxrender={maxrender} /> */}
 
       <div key="card" className={s.cardcontainer}>
-        {games &&
-          games
-            .slice(
-              (pagina - 1) * juegosPorPagina,
-              (pagina - 1) * juegosPorPagina + juegosPorPagina
-            )
-            .map((juego) => {
-              return (
-                <div key={juego.id}>
-                  <Cards
-                    key={juego.id}
-                    id={juego.id}
-                    name={juego.name}
-                    genres={juego.genres?.map((gan, index) => (
-                      <div key={index}>{gan.name}</div>
-                    ))}
-                    background_image={juego.background_image}
-                    rating={juego.rating}
-                  />
-                </div>
-              );
-            })}
+        {currentPage.map((juego) => {
+          return (
+            <div key={juego.id}>
+              <Cards
+                key={juego.id}
+                id={juego.id}
+                name={juego.name}
+                genres={juego.genres?.map((gan, index) => (
+                  <div key={index}>{gan.name}</div>
+                ))}
+                background_image={juego.background_image}
+                rating={juego.rating}
+              />
+            </div>
+          );
+        })}
       </div>
 
       <br />
@@ -136,9 +132,9 @@ export const Home = () => {
       </button>
 
       <Pages
-        pagina={juegosPorPagina}
-        setPagina={games.length}
-        maxrender={paginado}
+        perPage={juegosPorPagina}
+        allGames={games.length}
+        setPagina={paginado}
       />
 
       <br />

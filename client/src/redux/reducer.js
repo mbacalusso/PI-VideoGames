@@ -58,10 +58,10 @@ export default function rootReducer(state = initialState, action) {
     case SET_FILTER_GAMES_ORDER:
       let ordererByName = [...state.games];
       ordererByName = ordererByName.sort((a, b) => {
-        if (a.name.toUpperCase() < b.name.toUpperCase()) {
+        if (a.name.toLowerCase() < b.name.toLowerCase()) {
           return action.payload === "asc" ? -1 : 1;
         }
-        if (a.name.toUpperCase() > b.name.toUpperCase()) {
+        if (a.name.toLowerCase() > b.name.toLowerCase()) {
           return action.payload === "desc" ? -1 : 1;
         }
         return 0;
